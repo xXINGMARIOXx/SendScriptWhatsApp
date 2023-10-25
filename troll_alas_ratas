@@ -1,0 +1,534 @@
+async function enviarScript(scriptText){
+	const lines = scriptText.split(/[\n\t]+/).map(line => line.trim()).filter(line => line);
+	main = document.querySelector("#main"),
+	textarea = main.querySelector(`div[contenteditable="true"]`)
+	
+	if(!textarea) throw new Error("en conversacion abierta")
+	
+	for(const line of lines){
+		console.log(line)
+	
+		textarea.focus();
+		document.execCommand('insertText', false, line);
+		textarea.dispatchEvent(new Event('change', {bubbles: true}));
+	
+		setTimeout(() => {
+			(main.querySelector(`[data-testid="send"]`) || main.querySelector(`[data-icon="send"]`)).click();
+		}, 100);
+		
+		if(lines.indexOf(line) !== lines.length - 1) await new Promise(resolve => setTimeout(resolve, 250));
+	}
+	
+	return lines.length;
+}
+
+enviarScript(`
+como hacer dinero honrradamente 
+
+Written by
+
+Mario b.
+
+Ganar dinero es una preocupación común para muchas personas en todo el mundo.
+
+Una de las formas más tradicionales de ganar dinero es tener un empleo a tiempo completo o parcial.
+
+Trabajar para una empresa te proporciona un salario regular, pero puede haber limitaciones en cuanto a ingresos.
+
+El trabajo autónomo te brinda más control sobre tu tiempo y tus ingresos.
+
+Puedes ofrecer tus habilidades como consultor, diseñador gráfico independiente o escritor freelance.
+
+Otra opción es invertir en bienes raíces, comprando propiedades para alquilar.
+
+Las inversiones en bienes raíces pueden generar ingresos pasivos a largo plazo.
+
+Invertir en el mercado de valores es otra alternativa popular.
+
+Comprar acciones de empresas te convierte en accionista y te permite participar en sus beneficios.
+
+Sin embargo, el mercado de valores puede ser volátil y requiere educación financiera.
+
+En la era digital, las oportunidades en línea son abundantes.
+
+El marketing de afiliados te permite promocionar productos de otras personas y ganar comisiones por ventas.
+
+El comercio electrónico te permite crear una tienda en línea y vender productos físicos o digitales.
+
+Los blogs y canales de YouTube populares pueden generar ingresos a través de la publicidad y el marketing de afiliados.
+
+Las criptomonedas, como Bitcoin y Ethereum, han emergido como una nueva forma de inversión.
+
+Comprar y mantener criptomonedas puede ser lucrativo, pero también es arriesgado debido a la volatilidad.
+
+Las aplicaciones móviles ofrecen oportunidades de ingresos.
+
+Puedes desarrollar una aplicación y venderla en tiendas de aplicaciones como iOS o Google Play.
+
+También puedes crear una aplicación exitosa y monetizarla a través de anuncios o compras dentro de la aplicación.
+
+La educación en línea es una tendencia en crecimiento.
+
+Puedes ofrecer cursos en línea y ganar dinero compartiendo tu conocimiento.
+
+Plataformas como Udemy y Coursera permiten a los instructores ganar dinero enseñando a otros.
+
+El comercio en línea, como la venta de productos usados en mercados en línea, es una opción.
+
+Puedes deshacerte de artículos no deseados y ganar dinero extra al mismo tiempo.
+
+El freelancing te permite ofrecer servicios de diseño gráfico, redacción, programación o marketing digital en plataformas como Upwork.
+
+Si tienes una pasión por escribir, considera la publicación de libros electrónicos en plataformas como Amazon Kindle Direct Publishing.
+
+El marketing de contenido te permite crear contenido valioso en línea y monetizarlo a través de anuncios, patrocinios y marketing de afiliados.
+
+El dropshipping es una forma de comercio electrónico en la que puedes vender productos sin mantener un inventario.
+
+Las encuestas en línea y la participación en grupos de enfoque son formas sencillas de ganar dinero en línea compartiendo tus opiniones.
+
+El trading de opciones binarias y el trading de futuros son opciones más avanzadas para quienes tienen experiencia en los mercados financieros.
+
+La inversión en bienes raíces en línea te permite invertir en propiedades comerciales o residenciales a través de plataformas de crowdfunding inmobiliario.
+
+El alquiler de tu propiedad a través de plataformas como Airbnb puede generar ingresos adicionales.
+
+Si tienes habilidades en programación, puedes trabajar como desarrollador de software independiente.
+
+Los servicios de traducción y edición también son demandados en el mercado independiente.
+
+Otra opción es ofrecer servicios de marketing digital, como la gestión de campañas publicitarias en línea.
+
+Si eres un artista o artesano, puedes vender tus creaciones en mercados en línea como Etsy.
+
+La creación de contenido en línea, como blogs, videos o podcasts, puede generar ingresos a través de anuncios, patrocinios y donaciones de seguidores.
+
+El arbitraje en línea implica comprar productos a un precio más bajo en un mercado y venderlos a un precio más alto en otro.
+
+Puedes buscar ofertas en sitios web de subastas o descuento y revender esos productos a través de plataformas de comercio electrónico.
+
+La inversión en startups a través de plataformas de crowdfunding de capital de riesgo te permite invertir en empresas emergentes y participar en su éxito a largo plazo.
+
+El trading de divisas, también conocido como Forex, es otra opción para ganar dinero.
+
+Implica comprar y vender monedas extranjeras en el mercado de divisas y aprovechar las fluctuaciones de los tipos de cambio.
+
+El marketing de contenido te permite crear contenido valioso en línea y monetizarlo a través de anuncios, patrocinios y marketing de afiliados.
+
+El arbitraje de criptomonedas implica aprovechar las diferencias de precios entre diferentes bolsas de criptomonedas.
+
+El comercio de opciones es una estrategia avanzada que implica comprar y vender contratos de opciones.
+
+La minería de criptomonedas es una forma de ganar criptomonedas al validar transacciones en la red de blockchain.
+
+La creación de sitios web y la venta de sitios web establecidos pueden generar ganancias.
+
+Si tienes habilidades en diseño gráfico, puedes vender tus servicios en línea.
+
+La transcripción de audio y video es un trabajo en línea que involucra la conversión de contenido hablado en texto escrito.
+
+La consultoría en línea es una forma de ganar dinero compartiendo tu experiencia y conocimientos con otros.
+
+La inversión en préstamos peer-to-peer te permite prestar dinero a individuos o empresas a través de plataformas en línea.
+
+El comercio de futuros implica apostar sobre el precio futuro de un activo subyacente, como productos básicos o índices bursátiles.
+
+El crowdfactoring es una forma de inversión en la que los inversores compran facturas pendientes de empresas a cambio de un descuento.
+
+La consultoría de marketing puede ser lucrativa si tienes experiencia en estrategias de marketing.
+
+La inversión en oro y metales preciosos es una forma de diversificar tu cartera de inversiones.
+
+La producción y venta de cursos en línea sobre temas en los que eres un experto puede generar ingresos a lo largo del tiempo.
+
+El alquiler de equipos, como cámaras o herramientas, a través de plataformas en línea puede generar ingresos pasivos.
+
+La venta de fotografías en sitios web de fotografía de stock es una forma de monetizar tu pasión por la fotografía.
+
+La creación de una marca personal sólida en línea puede abrir oportunidades para ganar dinero a través de conferencias y colaboraciones.
+
+Si tienes habilidades en edición de video, puedes ofrecer servicios de edición a creadores de contenido en línea.
+
+La escritura de currículums y cartas de presentación puede ser una fuente de ingresos si eres un escritor hábil.
+
+La venta de productos de impresión bajo demanda, como camisetas y tazas, a través de plataformas en línea es una opción.
+
+La inversión en coches de lujo o vehículos recreativos y su alquiler a través de plataformas de alquiler puede ser una fuente de ingresos.
+
+La compra de dominios web valiosos y su posterior venta a compradores interesados es una forma de inversión en línea.
+
+La inversión en energía renovable, como la instalación de paneles solares en propiedades, puede generar ingresos a través de la venta de energía.
+
+La afiliación de seguros puede generar comisiones por referir clientes a compañías de seguros.
+
+La inversión en empresas de tecnología emergentes a través de programas de aceleración o inversión ángel puede ser rentable.
+
+La inversión en obras de arte y objetos de colección puede apreciarse con el tiempo y generar beneficios.
+
+La inversión en franquicias puede ser una forma de adquirir un negocio establecido y generar ingresos.
+
+La organización de eventos o conferencias puede generar ingresos a través de la venta de entradas y patrocinios.
+
+La inversión en bienes raíces comerciales, como oficinas o locales comerciales, puede generar ingresos a través del alquiler.
+
+La inversión en agricultura o terrenos agrícolas puede generar ingresos a través de la cosecha y venta de productos agrícolas.
+
+La inversión en fondos mutuos y ETFs ofrece diversificación y la oportunidad de ganar dinero a través de ganancias de capital y dividendos.
+
+La inversión en arte digital y activos digitales coleccionables puede ser rentable en el mercado de NFT.
+
+La creación y venta de aplicaciones móviles es una fuente de ingresos si tienes habilidades de desarrollo de software.
+
+La inversión en bonos gubernamentales o corporativos puede generar ingresos a través de pagos de intereses periódicos.
+
+La inversión en proyectos inmobiliarios, como desarrollos de viviendas o complejos de apartamentos, puede generar ingresos a través del alquiler y la venta de propiedades.
+
+La inversión en empresas de tecnología blockchain o criptomonedas es una opción en auge.
+
+La compra de maquinaria o equipos industriales y su alquiler a empresas puede generar ingresos.
+
+La inversión en granjas o terrenos agrícolas para la producción de alimentos puede ser una fuente de ingresos sostenibles.
+
+La creación de un blog o sitio web de nicho y la monetización a través de anuncios y marketing de afiliados es una estrategia popular.
+
+La inversión en infraestructura, como carreteras o puentes, puede generar ingresos a través de peajes y tarifas.
+
+La organización de cursos y talleres presenciales puede ser una fuente de ingresos si tienes experiencia en un campo específico.
+
+La inversión en energía solar o eólica a través de proyectos de energía renovable puede generar ingresos a través de la venta de energía a la red.
+
+La compraventa de productos de lujo, como relojes o joyas, puede generar ganancias si tienes conocimientos en el campo.
+
+La inversión en sellos, monedas o antigüedades puede ser rentable para coleccionistas expertos.
+
+La participación en programas de afiliados de empresas de hosting web puede generar comisiones por referir clientes.
+
+La inversión en franquicias de restaurantes puede proporcionar una fuente de ingresos estable si tienes experiencia en la industria de la restauración.
+
+La creación y venta de programas de software personalizados es una fuente de ingresos si eres un programador hábil.
+
+La inversión en propiedades de vacaciones y alquiler a corto plazo a través de plataformas como Airbnb es una opción.
+
+La compra y venta de antigüedades, obras de arte o artículos de colección en subastas o ferias puede generar beneficios.
+
+La inversión en empresas de tecnología emergentes a través de fondos de capital de riesgo puede ser rentable.
+
+La inversión en terrenos baldíos o propiedades rurales para desarrollo futuro puede generar ganancias a largo plazo.
+
+La inversión en bienes raíces industriales, como almacenes o instalaciones de producción, puede ser una fuente de ingresos a través del alquiler a empresas.
+
+La inversión en bonos municipales o gubernamentales puede generar ingresos a través de pagos de intereses libres de impuestos.
+
+La inversión en empresas de tecnología médica o biotecnología puede ser rentable si tienes experiencia en el campo de la salud.
+
+La creación y venta de productos digitales, como plantillas o recursos en línea, es una fuente de ingresos para diseñadores y creadores de contenido.
+
+La inversión en energía geotérmica o hidroeléctrica a través de proyectos de energía renovable puede generar ingresos a largo plazo.
+
+La compraventa de obras de arte contemporáneo o arte moderno puede ser rentable en el mercado del arte.
+
+La participación en programas de afiliados de plataformas de inversión en línea puede generar comisiones por referir inversores.
+
+La inversión en empresas de tecnología de inteligencia artificial o aprendizaje automático puede ser lucrativa en el campo de la tecnología.
+
+La inversión en terrenos agrícolas para la producción de cultivos específicos, como frutas o verduras, puede generar ingresos estacionales.
+
+La organización de seminarios y conferencias especializadas puede ser una fuente de ingresos si tienes experiencia en un campo técnico.
+
+La inversión en energía de biomasa o reciclaje a través de proyectos de energía renovable puede ser sostenible y rentable.
+
+La compraventa de antigüedades, objetos de colección o arte étnico puede ser una fuente de ingresos para coleccionistas apasionados.
+
+La inversión en empresas de tecnología espacial o exploración espacial puede ofrecer oportunidades de inversión emocionantes.
+
+La creación y venta de servicios de consultoría en línea es una fuente de ingresos si eres un experto en tu campo.
+
+La inversión en energía mareomotriz o de corriente oceánica a través de proyectos de energía renovable puede ser rentable.
+
+La compra y venta de monedas raras o sellos postales puede ser una fuente de ingresos para numismáticos y filatelistas.
+
+La participación en programas de afiliados de plataformas de comercio electrónico puede generar comisiones por referir clientes a tiendas en línea.
+
+La inversión en empresas de tecnología de la información o desarrollo de software puede ser rentable en el mundo de la tecnología.
+
+La inversión en propiedades de uso mixto, como edificios que combinan espacio comercial y residencial, puede generar ingresos a través del alquiler.
+
+La inversión en bonos corporativos o de empresas puede generar ingresos a través de pagos de intereses periódicos.
+
+La inversión en empresas de tecnología de realidad virtual o aumentada puede ser emocionante en el mundo de la tecnología.
+
+La creación y venta de servicios de diseño gráfico en línea es una fuente de ingresos si eres un diseñador hábil.
+
+La inversión en energía térmica o de calor a través de proyectos de energía renovable puede ser rentable.
+
+La compraventa de antigüedades o arte religioso puede ser una fuente de ingresos para coleccionistas de arte sacro.
+
+La inversión en empresas de tecnología de automatización y robótica puede ser lucrativa en el campo de la automatización industrial.
+
+La creación y venta de servicios de redacción en línea es una fuente de ingresos si eres un escritor talentoso.
+
+La inversión en energía hidrógeno o celdas de combustible a través de proyectos de energía renovable puede ser prometedora.
+
+La compra y venta de arte moderno o contemporáneo puede ser rentable en el mercado del arte.
+
+La participación en programas de afiliados de empresas de educación en línea puede generar comisiones por referir estudiantes.
+
+La inversión en empresas de tecnología de vehículos autónomos o conducción autónoma puede ser emocionante en el campo de la movilidad.
+
+La inversión en propiedades comerciales de alto tráfico puede generar ingresos a través del alquiler a negocios minoristas.
+
+La inversión en bonos convertibles puede ofrecer la posibilidad de convertir bonos en acciones de la empresa emisora.
+
+La inversión en empresas de tecnología de blockchain o criptomonedas puede ser prometedora en el mundo digital.
+
+La creación y venta de servicios de programación en línea es una fuente de ingresos si eres un programador experimentado.
+
+La inversión en energía solar de concentración a través de proyectos de energía renovable puede ser una fuente de ingresos a largo plazo.
+
+La compraventa de arte clásico o antiguo puede ser rentable en el mercado del arte.
+
+La participación en programas de afiliados de plataformas de desarrollo de software puede generar comisiones por referir clientes interesados en soluciones de software.
+
+La inversión en empresas de tecnología de la salud o biotecnología puede ser lucrativa en el campo de la atención médica.
+
+La inversión en propiedades comerciales en áreas de rápido crecimiento puede generar ingresos a través del alquiler a empresas en expansión.
+
+La inversión en bonos municipales de ingresos pueden ofrecer pagos regulares y exentos de impuestos.
+
+La inversión en empresas de tecnología de inteligencia de negocios o análisis de datos puede ser prometedora en el mundo empresarial.
+
+La creación y venta de servicios de diseño web en línea es una fuente de ingresos si eres un diseñador web calificado.
+
+La inversión en energía eólica marina a través de proyectos de energía renovable puede ser sostenible y rentable.
+
+La compra y venta de joyas antiguas o piezas de orfebrería puede ser una fuente de ingresos para amantes de la joyería.
+
+La inversión en empresas de tecnología de la música o producción musical puede ser emocionante en la industria del entretenimiento.
+
+La organización y venta de cursos en línea sobre temas específicos puede generar ingresos a largo plazo.
+
+La inversión en propiedades de uso mixto en áreas urbanas puede generar ingresos a través del alquiler a negocios y residentes.
+
+La inversión en bonos indexados a la inflación ofrece protección contra la pérdida de poder adquisitivo.
+
+La inversión en empresas de tecnología de la inteligencia artificial o aprendizaje automático puede ser prometedora en el campo de la tecnología.
+
+La creación y venta de servicios de marketing digital en línea es una fuente de ingresos si tienes experiencia en estrategias de marketing.
+
+La inversión en energía geotérmica a través de proyectos de energía renovable puede ser sostenible y rentable.
+
+La compra y venta de objetos de arte moderno o contemporáneo puede ser una fuente de ingresos para coleccionistas de arte contemporáneo.
+
+La inversión en empresas de tecnología de la cadena de bloques o criptomonedas puede ser emocionante en el mundo digital.
+
+La organización y venta de servicios de consultoría en línea es una fuente de ingresos si eres un experto en tu campo.
+
+La inversión en energía solar o eólica a través de proyectos de energía renovable puede ser sostenible y rentable.
+
+La compra y venta de arte religioso o arte sacro puede ser una fuente de ingresos para coleccionistas de arte religioso.
+
+La inversión en empresas de tecnología espacial o exploración espacial puede ser emocionante en el campo de la exploración espacial.
+
+La creación y venta de productos digitales, como plantillas o recursos en línea, es una fuente de ingresos para diseñadores y creadores de contenido.
+
+La inversión en energía de biomasa o reciclaje a través de proyectos de energía renovable puede ser sostenible y rentable.
+
+La compraventa de obras de arte contemporáneo o arte moderno puede ser rentable en el mercado del arte.
+
+La participación en programas de afiliados de plataformas de inversión en línea puede generar comisiones por referir inversores.
+
+La inversión en empresas de tecnología de inteligencia artificial o aprendizaje automático puede ser lucrativa en el campo de la tecnología.
+
+La inversión en terrenos baldíos o propiedades rurales para desarrollo futuro puede generar ganancias a largo plazo.
+
+La creación y venta de un blog o sitio web de nicho y la monetización a través de anuncios y marketing de afiliados es una estrategia popular.
+
+La inversión en energía solar o eólica a través de proyectos de energía renovable puede ser sostenible y rentable.
+
+La participación en programas de afiliados de empresas de hosting web puede generar comisiones por referir clientes a compañías de hosting.
+
+La inversión en empresas de tecnología médica o biotecnología puede ser rentable si tienes experiencia en el campo de la salud.
+
+La creación y venta de productos digitales, como eBooks o cursos en línea, es una fuente de ingresos si eres un experto en tu campo.
+
+La inversión en energía geotérmica o hidroeléctrica a través de proyectos de energía renovable puede ser una fuente de ingresos a largo plazo.
+
+La compra y venta de arte moderno o contemporáneo puede ser rentable en el mercado del arte.
+
+La participación en programas de afiliados de plataformas de comercio electrónico puede generar comisiones por referir clientes a tiendas en línea.
+
+La inversión en empresas de tecnología de vehículos autónomos o conducción autónoma puede ser emocionante en el campo de la movilidad.
+
+La organización de cursos y talleres presenciales puede ser una fuente de ingresos si tienes experiencia en un campo específico.
+
+La inversión en energía solar de concentración a través de proyectos de energía renovable puede ser una fuente de ingresos a largo plazo.
+
+La compraventa de antigüedades, objetos de colección o arte étnico puede ser una fuente de ingresos para coleccionistas apasionados.
+
+La inversión en empresas de tecnología espacial o exploración espacial puede ofrecer oportunidades de inversión emocionantes.
+
+La creación y venta de servicios de consultoría en línea es una fuente de ingresos si eres un experto en tu campo.
+
+La inversión en energía térmica o de calor a través de proyectos de energía renovable puede ser rentable.
+
+La compra y venta de monedas raras o sellos postales puede ser una fuente de ingresos para numismáticos y filatelistas.
+
+La participación en programas de afiliados de plataformas de desarrollo de software puede generar comisiones por referir clientes interesados en soluciones de software.
+
+La inversión en empresas de tecnología de la salud o biotecnología puede ser lucrativa en el campo de la atención médica.
+
+La creación y venta de servicios de diseño gráfico en línea es una fuente de ingresos si eres un diseñador hábil.
+
+La inversión en energía mareomotriz o de corriente oceánica a través de proyectos de energía renovable puede ser sostenible y rentable.
+
+La compra y venta de joyas antiguas o piezas de orfebrería puede ser una fuente de ingresos para amantes de la joyería.
+
+La inversión en empresas de tecnología de la música o producción musical puede ser emocionante en la industria del entretenimiento.
+
+La organización y venta de cursos en línea sobre temas específicos puede generar ingresos a largo plazo.
+
+La inversión en propiedades de uso mixto en áreas urbanas puede generar ingresos a través del alquiler a negocios y residentes.
+
+La inversión en bonos indexados a la inflación ofrece protección contra la pérdida de poder adquisitivo.
+
+La inversión en empresas de tecnología de la inteligencia artificial o aprendizaje automático puede ser prometedora en el campo de la tecnología.
+
+La creación y venta de servicios de programación en línea es una fuente de ingresos si eres un programador experimentado.
+
+La inversión en energía solar de concentración a través de proyectos de energía renovable puede ser una fuente de ingresos a largo plazo.
+
+La compraventa de arte clásico o antiguo puede ser rentable en el mercado del arte.
+
+La participación en programas de afiliados de empresas de educación en línea puede generar comisiones por referir estudiantes.
+
+La inversión en empresas de tecnología de vehículos autónomos o conducción autónoma puede ser emocionante en el campo de la movilidad.
+
+La creación y venta de servicios de redacción en línea es una fuente de ingresos si eres un escritor talentoso.
+
+La inversión en energía geotérmica a través de proyectos de energía renovable puede ser sostenible y rentable.
+
+La compra y venta de objetos de arte moderno o contemporáneo puede ser una fuente de ingresos para coleccionistas de arte contemporáneo.
+
+La inversión en empresas de tecnología de la cadena de bloques o criptomonedas puede ser emocionante en el mundo digital.
+
+La creación y venta de servicios de consultoría en línea es una fuente de ingresos si eres un experto en tu campo.
+
+La inversión en energía solar o eólica a través de proyectos de energía renovable puede ser sostenible y rentable.
+
+La participación en programas de afiliados de empresas de hosting web puede generar comisiones por referir clientes a compañías de hosting.
+
+La inversión en empresas de tecnología médica o biotecnología puede ser rentable si tienes experiencia en el campo de la salud.
+
+La creación y venta de productos digitales, como plantillas o recursos en línea, es una fuente de ingresos para diseñadores y creadores de contenido.
+
+La inversión en energía de biomasa o reciclaje a través de proyectos de energía renovable puede ser sostenible y rentable.
+
+La compraventa de obras de arte contemporáneo o arte moderno puede ser rentable en el mercado del arte.
+
+La participación en programas de afiliados de plataformas de inversión en línea puede generar comisiones por referir inversores.
+
+La inversión en empresas de tecnología de inteligencia artificial o aprendizaje automático puede ser lucrativa en el campo de la tecnología.
+
+La inversión en terrenos baldíos o propiedades rurales para desarrollo futuro puede generar ganancias a largo plazo.
+
+La creación y venta de un blog o sitio web de nicho y la monetización a través de anuncios y marketing de afiliados es una estrategia popular.
+
+La inversión en energía solar o eólica a través de proyectos de energía renovable puede ser sostenible y rentable.
+
+La participación en programas de afiliados de empresas de hosting web puede generar comisiones por referir clientes a compañías de hosting.
+
+La inversión en empresas de tecnología médica o biotecnología puede ser rentable si tienes experiencia en el campo de la salud.
+
+La creación y venta de productos digitales, como eBooks o cursos en línea, es una fuente de ingresos si eres un experto en tu campo.
+
+La inversión en energía geotérmica o hidroeléctrica a través de proyectos de energía renovable puede ser una fuente de ingresos a largo plazo.
+
+La compra y venta de arte moderno o contemporáneo puede ser rentable en el mercado del arte.
+
+La participación en programas de afiliados de plataformas de comercio electrónico puede generar comisiones por referir clientes a tiendas en línea.
+
+La inversión en empresas de tecnología de vehículos autónomos o conducción autónoma puede ser emocionante en el campo de la movilidad.
+
+La organización de cursos y talleres presenciales puede ser una fuente de ingresos si tienes experiencia en un campo específico.
+
+La inversión en energía solar de concentración a través de proyectos de energía renovable puede ser una fuente de ingresos a largo plazo.
+
+La compraventa de antigüedades, objetos de colección o arte étnico puede ser una fuente de ingresos para coleccionistas apasionados.
+
+La inversión en empresas de tecnología espacial o exploración espacial puede ofrecer oportunidades de inversión emocionantes.
+
+La creación y venta de servicios de consultoría en línea es una fuente de ingresos si eres un experto en tu campo.
+
+La inversión en energía térmica o de calor a través de proyectos de energía renovable puede ser rentable.
+
+La compra y venta de monedas raras o sellos postales puede ser una fuente de ingresos para numismáticos y filatelistas.
+
+La participación en programas de afiliados de plataformas de desarrollo de software puede generar comisiones por referir clientes interesados en soluciones de software.
+
+La inversión en empresas de tecnología de la salud o biotecnología puede ser lucrativa en el campo de la atención médica.
+
+La creación y venta de servicios de diseño gráfico en línea es una fuente de ingresos si eres un diseñador hábil.
+
+La inversión en energía mareomotriz o de corriente oceánica a través de proyectos de energía renovable puede ser sostenible y rentable.
+
+La compra y venta de joyas antiguas o piezas de orfebrería puede ser una fuente de ingresos para amantes de la joyería.
+
+La inversión en empresas de tecnología de la música o producción musical puede ser emocionante en la industria del entretenimiento.
+
+La organización y venta de cursos en línea sobre temas específicos puede generar ingresos a largo plazo.
+
+La inversión en propiedades de uso mixto en áreas urbanas puede generar ingresos a través del alquiler a negocios y residentes.
+
+La inversión en bonos indexados a la inflación ofrece protección contra la pérdida de poder adquisitivo.
+
+La inversión en empresas de tecnología de la inteligencia artificial o aprendizaje automático puede ser prometedora en el campo de la tecnología.
+
+La creación y venta de servicios de programación en línea es una fuente de ingresos si eres un programador experimentado.
+
+La inversión en energía solar de concentración a través de proyectos de energía renovable puede ser una fuente de ingresos a largo plazo.
+
+La compraventa de arte clásico o antiguo puede ser rentable en el mercado del arte.
+
+La participación en programas de afiliados de empresas de educación en línea puede generar comisiones por referir estudiantes.
+
+La inversión en empresas de tecnología de vehículos autónomos o conducción autónoma puede ser emocionante en el campo de la movilidad.
+
+La creación y venta de servicios de redacción en línea es una fuente de ingresos si eres un escritor talentoso.
+
+La inversión en energía geotérmica a través de proyectos de energía renovable puede ser sostenible y rentable.
+
+La compra y venta de objetos de arte moderno o contemporáneo puede ser una fuente de ingresos para coleccionistas de arte contemporáneo.
+
+La inversión en empresas de tecnología de la cadena de bloques o criptomonedas puede ser emocionante en el mundo digital.
+
+La creación y venta de servicios de consultoría en línea es una fuente de ingresos si eres un experto en tu campo.
+
+La inversión en energía solar o eólica a través de proyectos de energía renovable puede ser sostenible y rentable.
+
+La participación en programas de afiliados de empresas de hosting web puede generar comisiones por referir clientes a compañías de hosting.
+
+La inversión en empresas de tecnología médica o biotecnología puede ser rentable si tienes experiencia en el campo de la salud.
+
+La creación y venta de productos digitales, como plantillas o recursos en línea, es una fuente de ingresos para diseñadores y creadores de contenido.
+
+La inversión en energía de biomasa o reciclaje a través de proyectos de energía renovable puede ser sostenible y rentable.
+
+La compraventa de obras de arte contemporáneo o arte moderno puede ser rentable en el mercado del arte.
+
+La participación en programas de afiliados de plataformas de inversión en línea puede generar comisiones por referir inversores.
+
+La inversión en empresas de tecnología de inteligencia artificial o aprendizaje automático puede ser lucrativa en el campo de la tecnología.
+
+La inversión en terrenos baldíos o propiedades rurales para desarrollo futuro puede generar ganancias a largo plazo.
+
+La creación y venta de un blog o sitio web de nicho y la monetización a través de anuncios y marketing de afiliados es una estrategia popular.
+
+La inversión en energía solar o eólica a través de proyectos de energía renovable puede ser sostenible y rentable.
+
+La participación en programas de afiliados de empresas de hosting web puede generar comisiones por referir clientes a compañías de hosting.
+
+La inversión en empresas de tecnología médica o biotecnología puede ser rentable si tienes experiencia en el campo de la salud.
+
+el final trabaja RATA 
+
+`).then(e => console.log(`Código finalizado, ${e} mensagens enviadas`)).catch(console.error)
